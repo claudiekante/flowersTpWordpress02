@@ -22,15 +22,34 @@
 		<?php
 		the_content();
 
+
+//        <!--        personalizzazione per mostrare signature ACF-->
+        $signature = get_field('signature');
+        if($signature){
+            echo '<hr';
+            echo '<p>Written by : '.$signature.'.</p>';
+        }
+
 		wp_link_pages(
 			array(
 				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
 				'after'    => '</nav>',
 				/* translators: %: Page number. */
 				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+
+
 			)
+
+
+
+
 		);
+
 		?>
+
+
+
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer default-max-width">
